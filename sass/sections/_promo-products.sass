@@ -1,0 +1,55 @@
+.promo
+    &-products
+        padding: 48px 0
+        &__wrapper
+            display: flex
+            align-items: center
+            justify-content: center
+        &__img-container
+            position: absolute
+            display: block
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(251, 246, 244, 0.6)
+        &-item
+            position: relative
+            margin-right: 48px
+            padding: 16px 16px
+            width: 324px
+            height: 296px
+            overflow: hidden
+            &:last-child
+                margin-right: 0
+            &:hover img
+                transform: scale(1.2)
+            &__img
+                position: absolute
+                top: 0
+                left: 0             
+                width: 324px
+                height: 296px
+                z-index: -1
+                filter: blur(4px)
+                transition: 1.2s
+            &__desc
+                position: relative
+                z-index: 1
+            &__title
+                font-family: $base-font
+                font-weight: 500
+                font-size: 24px
+                line-height: 29px
+                letter-spacing: 0.05em
+                color: $text-color
+            &__text
+                margin-top: 18px
+                @extend %text-typography
+@media (max-width: 480px)
+    .promo-products
+        &__wrapper
+            flex-direction: column
+        &-item
+            margin-right: 0
+            margin-bottom: 20px

@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+
+ErrorDocument 404 /404.php
+
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+
+Options -Indexes
+
+

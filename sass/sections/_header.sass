@@ -1,0 +1,327 @@
+.header
+    &-wrapper
+        border-bottom: 1px solid #C3C1BF
+    &-top
+        padding: 16px 32px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &-container
+            max-width: 1920px
+            margin: 0 auto
+    &-nav
+        margin-left: 64px
+        &-mobile
+            padding: 0 16px
+        &-link-arrow
+            width: 20px
+            height: 10px
+            rotate: 90deg
+    &-search
+        position: relative
+        margin: 0 64px
+        padding: 20px 32px
+        max-width: 351px
+        width: 100%
+        border-right: 1px solid #C3C1BF
+        border-left: 1px solid #C3C1BF
+        &-wrapper
+        &__search
+            &-list
+                position: absolute
+                top: 125%
+                left: 0
+                width: 100%
+                height: auto
+                border-right: 1px solid #C3C1BF
+                border-left: 1px solid #C3C1BF
+                background-color: #FFFFFF
+                z-index: 999
+    &-right
+        z-index: 5
+    &-phone
+        &-link
+            margin-bottom: 10px
+    &-actions
+        margin-top: 8px
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-end
+        &__actions
+
+    &-favorites
+        margin-right: 26px
+        &__container
+            position: relative
+            display: inline-block
+        &__icons
+            width: 32px
+            height: 28.02px
+    &-cart-mini
+        &__container
+            position: relative
+            display: inline-block
+        &__count
+        &__icons
+            width: 32px
+            height: 29px
+    &-center
+        width: 100%  
+        height: 579px
+        position: relative
+    &-mobile
+        &-menu
+            position: fixed
+            display: block
+            top: 0
+            bottom: 0
+            left: 0
+            width: 100%
+            max-width: 414px
+            z-index: 4
+            transform: translateX(-120%)
+            background-color: #fff
+            transition: .5s
+            box-shadow: 2px 1px 24px -11px #000
+            overflow: scroll
+            scroll-behavior: smooth
+            &.active
+                transform: translateX(0)
+            & nav
+                display: none
+            & .header-top
+                padding-top: 16px
+    &-wrapper__slide
+        height: inherit
+        z-index: 3
+    &-slide
+        position: relative
+        background-image: url("../img/header-bg.jpg")
+        background-position: center 65%
+        background-repeat: no-repeat
+        background-size: cover
+        height: 100%
+        z-index: 1
+        &::before
+            content: ""
+            position: absolute
+            display: block
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, 0.5)
+            top: 0
+            left: 0
+            z-index: 0
+        &__desc
+            position: absolute
+            top: 50%
+            transform: translate(240px, -50%)
+            display: inline-block
+            width: 366px
+            z-index: 4
+        &__title
+            font-family: 'GothamBlack'
+            font-weight: 900
+            font-size: 48px
+            line-height: 58px
+            letter-spacing: 0.1em
+            color: $base-color
+        &__btn
+            display: inline-block
+            margin-top: 64px
+            padding: 33px 70px
+            font-family: $base-font
+            font-weight: 500
+            font-size: 18px
+            line-height: 22px
+            text-align: center
+            letter-spacing: 0.1em
+            color: #FFFFFF
+            background: #692F0F
+            border: 0
+            animation: 0.6, 0.01, 0.31, 0.98
+            animation-duration: 300ms
+            &:hover
+                opacity: 0.9
+
+.nav
+    &-list
+        display: flex
+        align-items: center
+        &-mobile
+            flex-direction: column
+            align-items: inherit
+        &-item
+            margin-right: 48px
+            &-mobile
+                margin-bottom: 20px
+                padding: 23px 0
+                display: flex
+                align-items: center
+                justify-content: space-between
+                border-bottom: 1px solid #D8D8D8
+            &:last-child
+                margin-right: 0
+.list
+    &-item
+        &-link
+            font-family: $base-font
+            @extend %text-typography
+            letter-spacing: 0.1em
+            text-transform: capitalize
+            &:hover
+                color: $link-active
+            &-mobile
+                margin-bottom: 20px
+                padding: 23px 0
+                display: inline-flex
+                align-items: center
+                justify-content: space-between
+                border-bottom: 1px solid #D8D8D8
+                font-size: 16px
+                line-height: 19px
+.logo
+    height: 61px
+    width: 204px
+    object-fit: contain
+.product-count-added
+    position: absolute
+    top: -5px
+    right: -8px
+    padding: 3px 5px
+    max-width: 20px
+    max-height: 20px
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: $base-font
+    font-weight: 500
+    font-size: 13px
+    line-height: 16px
+    letter-spacing: 0.05em
+    color: #44392E
+    border-radius: 50%
+    background-color: #EEC84A
+
+.form
+    &-search
+        width: 100%
+        display: flex
+        align-items: center
+        flex-direction: row-reverse
+        justify-content: start
+        &__input
+            width: 100%
+            @extend %text-typography
+            letter-spacing: 0.1em
+            color: $text-color-2
+            border: 0
+        &__btn
+            margin-right: 16px
+            width: 24px
+            height: 24px
+            background-image: url(../img/icons/search-icon.svg)
+            background-position: center
+            background-repeat: no-repeat
+            background-size: contain
+            background-color: transparent
+            border: 0
+.swiper-pagination-bullet
+    width: 12px
+    height: 12px
+    background-color: #8B7264
+    &-active
+        background-color:#FFE7D9
+.search-list-item
+    padding: 7.5px 16px
+    display: flex
+    align-items: center
+    border-top: 1px solid #C3C1BF
+    border-bottom: 1px solid #C3C1BF
+    &__img
+        margin-right: 16px
+        width: 92px
+        height: 92px
+        // width: 48px
+        // height: 48px
+        flex-shrink: 0
+    &__parameter
+        height: 92px
+        display: flex
+        flex-direction: column
+.parameter
+    &-price, &-price--old, &-desc
+        font-family: 'Gotham'
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+    &-price
+        padding: 2px
+        &__wrapper
+            margin-top: 2px
+            display: flex
+            align-items: center
+        &--old
+            margin-right: 20px
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                display: block
+                top: 50%
+                left: 0
+                width: 100%
+                height: 1px
+                background-color: #000
+        &--new
+            background-color: #EEC84A
+    &-title
+        font-family: $base-font
+        font-weight: 500
+        font-size: 14px
+        line-height: 17px       
+        letter-spacing: 0.05em
+        color: $text-color
+    &-desc
+        margin: 2px 0
+        font-size: 12px
+        line-height: 14px
+.toggle-menu
+    position: relative
+    margin-left: 26px
+    width: 20px
+    height: 20px
+    display: none
+    align-items: center
+    cursor: pointer
+    z-index: 4 
+    & span
+        position: relative
+        display: inline-block
+        width: 100%
+        height: 2.5px
+        background-color: #44392E
+        transition: .5s
+        border-radius: 20px
+    & span::before, & span::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 2.5px
+        background-color: #44392E
+        transition: .5s
+        border-radius: 20px
+    & span::before
+        top: -6.25px
+    & span::after
+        bottom: -6.25px
+    &.active span
+        background-color: transparent
+    &.active span::before
+        top: 0px
+        transform: rotate(45deg)
+    &.active span::after
+        bottom: 0px
+        transform: rotate(-45deg)

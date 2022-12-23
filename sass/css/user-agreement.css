@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/*шрифты*/ /*main fonts*/
+@font-face {
+  font-family: "Gotham";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../sass/fonts/Gotham/Gotham-Book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GothamMedium";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../sass/fonts/Gotham/GothamMedium.woff") format("woff2");
+}
+@font-face {
+  font-family: "GothamBold";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../sass/fonts/Gotham/Gotham-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GothamBlack";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../sass/fonts/Gotham/Gotham-Black.woff2") format("woff2");
+}
+/*secondary fonts*/
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../sass/fonts/Inter/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../sass/fonts/Inter/Inter-Medium.woff") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../sass/fonts/Inter/Inter-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../sass/fonts/Inter/Inter-Black.woff2") format("woff2");
+}
+/*переменные*/
+/*fonts*/
+/*color*/
+/**/
+/*user agreement*/
+.terms {
+  padding: 37px 0 33px 0;
+}
+.terms-title {
+  margin-bottom: 32px;
+}
+.terms-title__wrapper {
+  margin-bottom: 24px;
+}
+.terms-subtitle {
+  margin-bottom: 24px;
+  font-family: "GothamMedium", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: #44392E;
+}
+.terms-text {
+  position: relative;
+  margin-bottom: 16px;
+  font-family: "Gotham";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  color: #44392E;
+}
+.terms-text__bold {
+  font-family: "GothamMedium", sans-serif;
+  font-weight: 500;
+}
+.terms-text:last-child {
+  margin-bottom: 0;
+}
+.terms-item-list__li {
+  counter-increment: num;
+  list-style-position: inside;
+}
+.terms-item-list__li:last-child > ol > li {
+  padding: 0;
+}
+.terms-item-list__li:last-child > ol > li::before {
+  content: none;
+}
+.terms-item-list__li > ol {
+  margin-top: 24px;
+}
+.terms-item-list__li > ol > li {
+  position: relative;
+  padding-left: 33px;
+  counter-increment: num2;
+  list-style-type: none;
+}
+.terms-item-list__li > ol > li::before {
+  content: counter(num) "." counter(num2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,53 @@
+.footer
+    padding: 48px 0 24px 0
+    background-color: #FBF6F4
+    &-wrapper
+        display: flex
+        align-items: center
+    &-contacts
+        margin-right: 128px
+    &-title
+        margin-bottom: 12px
+        font-family: $base-font
+        @extend %text-typography
+    &-list
+        &-item
+            margin-bottom: 12px
+            @extend %text-typography
+            &:last-child
+                margin-bottom: 0
+            &-link
+                display: inline-flex
+                align-items: center
+                @extend %text-typography
+            &__icon
+                display: inline-block
+                margin-right: 16px
+                width: 24px
+                height: 24px
+    &-bottom
+        margin-top: 64px
+        display: flex
+        align-items: center
+.link-term-services
+    margin-left: 48px
+    font-family: $base-font!important
+.text-copyright
+    font-family: 'Gotham'
+    font-weight: 400
+    font-size: 16px
+    line-height: 19px
+    letter-spacing: 0.05em
+    color: #91857A
+    cursor: pointer
+.icon
+    &-phone
+        width: 16px
+        height: 16px
+        vertical-align: middle
+    &-inst
+        width: 27px
+        height: 27px
+    &-mail, &-share, &-map
+        width: 24px
+        height: 24px

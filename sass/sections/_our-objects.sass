@@ -1,0 +1,81 @@
+.our-objects
+    padding: 64px 0
+    background-color: #FBF6F4
+    &__wrapper
+    &-content
+        margin-top: 68px
+        display: flex
+        justify-content: center
+    &__card
+        position: relative
+        width: 100%
+        display: flex
+        background-color: #252525
+        overflow: hidden
+        &:last-child
+            margin-bottom: 0
+        &:hover img
+            transform: scale(1.2)
+        &-blur
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 0
+        &-img
+            width: 372px
+            height: 460px
+            display: flex
+            align-items: center
+            justify-content: center
+            color: #fff
+            text-align: center
+            transition: 1s
+            &__blur
+                width: 100%
+                height: 100%
+                opacity: 0.3
+                filter: blur(9px)
+            &__container     
+                width: 372px
+                height: 460px
+                flex-shrink: 0
+                overflow: hidden          
+                z-index: 1
+        &-desc
+            position: relative
+            padding: 32px 0 0 16px
+            z-index: 1
+        &-column
+            margin-left: 32px
+            & > .our-objects__card
+                flex-direction: column
+        & img
+            animation: .5s
+.card
+    &-list
+        margin-bottom: 30px
+        max-width: 848px
+    &-column
+        max-width: 560px
+        height: 100%
+        &-img
+            &-container
+                width: 560px
+                height: 373px
+                & > .our-objects__card-img
+                    width: 560px
+                    height: 373px
+    &-desc
+        &-title
+            font-family: 'GothamBold'
+            font-weight: 700
+            font-size: 28px
+            line-height: 34px
+            letter-spacing: 0.05em
+            color: #FFFFFF
+        &-text
+            margin-top: 20px
+            @extend %text-typography
+            color: #FFFFFF

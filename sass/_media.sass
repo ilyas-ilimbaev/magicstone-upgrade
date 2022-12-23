@@ -1,0 +1,247 @@
+@media (min-width: 1920px)
+    .container
+        max-width: 1840px
+    .header
+        &-search
+            max-width: 640px
+@media (max-width: 1536px)
+    .header
+        &-nav
+            margin-left: 34px
+        &-search
+            margin: 0 34px
+        &-slide
+            &__btn
+                padding: 33px 67px
+    .nav
+        &-list
+            &-item
+                margin-right: 34px
+@media (max-width: 1444px)
+    .logo
+        max-width: 180px
+        width: 100%
+    .header
+        &-top
+            padding: 16px 20px
+        &-nav
+            margin-left: 20px
+        &-search
+            margin: 0 20px
+            padding: 16px
+            max-width: 262px
+    .nav-list-item
+        margin-right: 20px
+    .list-item-link
+        font-size: 16px
+@media (max-width: 1200px)
+    .logo
+        max-width: 160px
+    .header
+        &-nav
+        &-search
+            margin: 0 15px
+            padding: 14px
+            max-width: 340px
+        &-right
+            display: flex
+            align-items: center
+        &-phone-link
+            margin-right: 10px
+            font-size: 14px
+    .list-item-link
+        font-size: 14px
+@media (max-width: 812px)
+    .header
+        &-mobile
+            &-menu
+                & nav
+                    display: block
+        &-nav, &-search
+            display: none
+@media (max-width: 480px)
+    .container
+        max-width: 390px
+    .logo
+        height: 36px
+        width: 121px
+    .section
+        &-title
+            font-family: $base-font
+            font-weight: 500
+            font-size: 24px
+            line-height: 29px
+    .product-count-added
+        max-width: 12px
+        max-height: 12px
+        font-size: 7px
+        line-height: 9px
+    .breadcrumbs
+        padding: 0 15px 0 15px
+    .header
+        &-top
+            position: relative
+            &-container               
+                position: relative
+                z-index: 5
+                background-color: #fff
+        &-center
+            height: 180px
+        &-slide
+            background-image: url("../img/header-bg-mob.jpg")
+            &__desc
+                top: 45%
+                left: 30px
+                width: 100%
+                transform: translateY(-50%)
+            &__title
+                max-width: 200px
+                font-size: 18px
+                line-height: 22px
+            &__btn
+                margin-top: 20px
+                padding: 10px
+                font-size: 14px
+                line-height: 18px
+        &-phone-link
+            display: none
+        &-mobile
+            &-menu
+        &-nav
+            &-mobile
+                margin-left: 0
+        &-search
+            &-mob
+                margin: 0
+                padding: 0
+                max-width: 100%
+                display: flex
+                border: 0
+                & > .header-search-wrapper
+                    flex-shrink: 0
+                    width: 100%
+            &__search-list-mob
+                position: relative
+                top: 0
+                border: 0
+        &-favorites
+            &__icons
+                width: 21.19px
+                height: 21px
+        &-cart-mini
+            &__icons
+                width: 24px
+                height: 24px
+    .nav-list-item-mobile
+        margin-right: 0
+    .form-search
+        &-wrapper
+            padding: 16px
+            display: flex
+            border-top: 1px solid #c3c1bf
+            border-bottom: 1px solid #c3c1bf
+        &-mob
+            border-left: 1px solid gray
+            border-right: 1px solid gray
+            padding: 10px
+    .toggle-menu
+        display: flex
+        &-none
+            display: none
+    .our-objects
+        padding: 20px
+        &-content
+            flex-direction: column
+        &__card
+            flex-direction: column
+            &-desc
+                padding: 25px 16px
+            &-img
+                &__container
+                    width: 100%
+                    height: 360px
+            &-column
+                margin-top: 32px
+                margin-left: 0
+    .card-column-img-container > .our-objects__card-img
+        width: 100%
+        height: 360px
+    .our-objects__card-img
+        width: 100%
+        height: 360px
+    .contacts
+        padding: 20px
+        &-wrapper
+            flex-direction: column
+        &-map
+            margin-top: 20px
+            max-width: 390px
+            & iframe
+                width: 100%
+        &-title
+            font-size: 20px
+            line-height: 24px
+        &-list-item
+            font-size: 14px
+            line-height: 16px
+    .card-desc
+        &-title
+            font-size: 20px
+            line-height: 26px
+        &-text
+            font-size: 16px
+            line-height: 20px
+    .promo-products
+        &__wrapper
+            flex-direction: column
+        &-item
+            margin-right: 0
+            margin-bottom: 20px
+    .footer
+        padding-top: 32px
+        padding-bottom: 24px
+        &-wrapper
+            flex-direction: column-reverse
+            align-items: flex-start
+        &-contacts
+            margin-top: 40px
+            margin-right: 0
+        &-title, &-list-item-link
+            font-size: 14px
+            line-height: 17px
+    .text-copyright
+        font-size: 12px
+        line-height: 14px
+    .link-term-services
+        margin-left: 11px
+    .footer
+        padding-left: 12px
+        padding-right: 12px
+    .productCard
+        &-row
+            flex-direction: column
+            align-items: flex-end
+            &__productCard-left
+                margin-bottom: 16px
+                width: 100%
+            &__cost-calculation-wrapper
+                width: 100%
+            &__cost-calculation
+                flex-wrap: wrap
+                justify-content: space-between
+        &__product-count
+            width: 96px
+            height: 31px
+        &__input-count
+            padding: 0
+            width: 100%
+            height: 31px
+            text-align: center
+        &__btn-plus, &__btn-minus
+            top: 0
+            bottom: 0
+            height: auto
+        &__btn-plus
+            right: 0
+        &__btn-minus
+            left: 0

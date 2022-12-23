@@ -1,0 +1,816 @@
+/*шрифты*/
+@import "../fonts/fonts"
+/*переменные*/
+@import "../variables"
+/*каталог*/
+%filters-item-name
+    font-family: 'Gotham'
+    font-weight: 400
+    font-size: 16px
+    line-height: 19px
+    letter-spacing: 0.05em
+    color: #44392E
+.product
+    &-catalog
+        &__filters
+            margin-right: 60px
+            width: 240px
+            flex-shrink: 0
+            &-fixed
+                position: relative
+                height: 1250px
+            &-container
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+        &-wrapper
+            display: flex
+        &__category-name
+            display: none
+            font-family: $base-font
+            font-weight: 500
+            font-size: 24px
+            line-height: 29px
+            letter-spacing: 0.05em
+            color: #44392E
+        &-title
+            margin-bottom: 32px
+
+.filters
+    &__filters
+        &-group
+            margin-bottom: 16px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            overflow: hidden
+            &.active
+                height: 22px
+                justify-content: space-between
+            &-wrapper
+        &-item
+            &-text
+                position: relative
+                display: flex
+                font-family: $base-font
+                @extend %text-typography
+        &-wrapper
+            &-secondary
+                display: none
+    &-group
+        display: flex
+        flex-direction: column
+        &-item
+            position: relative
+            padding-left: 8px
+            @extend %filters-item-name
+            border-left: 3px solid transparent
+            &:first-child
+                margin-top: 0
+            &-color
+                width: 40px
+                height: 40px
+                background-color: rgb(220, 118, 78)
+                &::before
+                    content: ""
+                    position: absolute
+                    display: none
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    box-shadow: 0px 0px 7px 1px #a3a6a7
+                    border-bottom: 4px solid #a81a1a
+                    z-index: 1
+                &-container
+                    margin-right: 10px
+                    &:nth-child(5n+5)
+                        margin-right: 0
+        &__label-wrapper
+            position: relative
+            margin-top: 8px
+        &-title
+            position: relative
+            display: inline-flex
+            align-items: center
+            font-family: $base-font
+            @extend %text-typography
+            & > .arrow-top
+                display: flex
+            & > .arrow-top.open
+                rotate: 180deg
+        &__radio
+            position: absolute
+            margin: 0
+            width: 100%
+            height: 100%
+            z-index: 2
+            opacity: 0
+        &__price-range
+            margin-top: 13px
+            display: flex
+        &__range
+            margin-right: 16px
+            display: flex
+            align-items: center
+            &:last-child
+                margin-right: 0
+            & > .filters-group__label-text
+                margin-right: 8px
+        &__label-text
+            @extend %text-typography
+        &__count-products
+            &-container
+                color: #776F67
+        &__filter-item
+            display: flex
+        &__custom-radio
+            position: relative
+            margin-right: 8px
+            width: 20px
+            height: 20px
+            border: 1px solid #44392E
+            &::before
+                content: ""
+                position: absolute
+                display: none
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: url(../img/icons/checkbox-white.svg) 1.3px 4px no-repeat
+                background-size: 80%
+        &__colors-change
+            flex-direction: row
+            flex-wrap: wrap
+                
+    &-price
+    &-brands
+    &-colors
+    &-thickness
+    &-сorner-elements
+.filter
+    &-group__filter-item
+        margin-top: 12px
+        transition: .5s
+        overflow-y: auto
+        max-height: 226px
+        scrollbar-width: thin
+        scrollbar-color: #692f0f #c2bcb678
+        /* Работает в Chrome, Edge и Safari */
+        &::-webkit-scrollbar
+            width: 8px
+        &::-webkit-scrollbar-track
+            background: #c2bcb678
+        &::-webkit-scrollbar-thumb
+            background-color:#692f0f
+            border-radius: 20px
+            border: 3px solid #692f0f
+        &.open
+            margin-top: 0
+            height: 0
+            visibility: hidden
+    &-groups__btn-open
+        display: none
+        padding: 12px 58px
+        @extend %text-typography
+        background-color: #EEC84A
+        border: 0
+.filters-group__radio:checked + .filters-group-item
+    color: #86573D
+    border-left: 3px solid #86573D
+.filters-group__radio:checked + .filters-group__custom-radio
+    background-color: #86573D
+.filters-group__radio:checked + .filters-group__custom-radio::before, .filters-group__radio:checked ~ .filters-group__label-text
+    display: inline
+    color: #86573D
+.filters-group__radio:checked + .filters-group-item-color::before
+    display: block
+.filter-group__range-line-container
+    height: 30px
+    display: flex
+    align-items: center
+.filter-group__range-line
+  position: relative
+  width: 200px
+  height: 6px
+  background-color: #C2BCB6
+.range-line__min, .range-line__max
+  position: absolute
+  top: 50%
+  width: 20px
+  height: 20px
+  transform: translateY(-50%)
+  background-color: #FFFFFF
+  border: 3.5px solid #692F0F
+  border-radius: 50%
+  cursor: pointer
+  outline: none
+  z-index: 1
+.range-line__max
+    right: 0
+.range-line__slide-rail
+  position: absolute
+  width: 100%
+  height: 6px
+  background-color: #C2BCB6
+.ui-slider-range
+    position: relative
+    height: 100%
+    background-color: #692F0F
+    z-index: 0
+.filter-group__form-field
+    margin: 0
+    padding: 3px 4px
+    @extend %filters-item-name
+    width: 56px
+    height: 24px
+    border: 1px solid #44392E
+/*sorting panel*/
+.search-result-no-product
+.product-catalog
+    &__sorting-panel
+        margin-bottom: 30px
+.sorting-panel
+    &__filters
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        max-width: 360px
+        &-header
+            position: relative
+            display: flex
+            align-items: center
+            cursor: pointer
+    &-icon
+        transition: none
+        &.active
+            rotate: 180deg
+    &-header-text
+        margin-right: 8px
+        @extend %filters-item-name
+    &-filters-text
+        padding: 6px 26px 6px 8px
+        border: 1px solid #C3C1BF
+        border-top: 0
+        border-bottom: 0
+        @extend %filters-item-name
+    &__filters
+        &-text
+        &-parameter
+            @extend %filters-item-name
+    &-list
+        display: none
+        position: absolute
+        background-color: #fff
+        box-shadow: 1px 7px 14px -3px #000
+        top: 120%
+        right: 16px
+        z-index: 1
+        &.active
+            display: block
+        &-item
+            padding: 10px
+            @extend %filters-item-name
+            cursor: pointer
+            &-active
+                font-family: $base-font
+            &:hover
+                background-color: #f09d003d
+    &__down-arrow-icon
+        position: absolute
+        top: 0
+        right: 6px
+        display: flex
+        align-items: center
+        width: 15px
+        height: 100%
+.icon
+.top-filter-icon
+.sorting-icon-mob
+    margin-left: 15px
+    width: 24px
+    height: 24px
+    display: inline-block
+/*sorting panel*/
+.sorting-panel
+    &-select
+        display: flex
+        width: 100%
+        position: relative
+        align-items: center
+        max-width: 300px
+
+.new-select
+    position: relative
+    padding: 6px 26px 6px 8px
+    width: 240px
+    @extend %filters-item-name
+    border: 1px solid #C3C1BF
+    border-bottom: 0
+    border-top: 0
+    user-select: none
+    cursor: pointer
+    &__list
+        position: absolute
+        top: 45px
+        left: 0
+        border: 1px solid #ced4da
+        cursor: pointer
+        width: 100%
+        z-index: 2
+        background: #fff
+        user-select: none
+    &__list.on
+        display: block
+    &__item
+        &:hover
+            background-color: #eec84a
+        & span
+            display: block
+            padding: 10px 15px
+            @extend %filters-item-name
+    &__item span:hover
+    &:after
+        content: ""
+        display: block
+        position: absolute
+        top: 10px
+        right: 7px
+        background: center/contain no-repeat url("../img/icons/down-arrow.svg")
+        width: 17px
+        height: 12px
+        -webkit-transition: all .27s ease-in-out
+            -o-transition: all .27s ease-in-out
+                transition: all .27s ease-in-out
+        -webkit-transform: rotate(180deg)
+        -ms-transform: rotate(180deg)
+        -o-transform: rotate(180deg)
+        transform: rotate(180deg)
+
+    &.on:after
+        -webkit-transform: rotate(0deg)
+        -ms-transform: rotate(0deg)
+        -o-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+/*product catalog*/
+.product-catalog
+    padding: 32px 64px
+    &__product-row
+.product-row
+    display: grid
+    grid-template-columns: repeat(4, minmax(200px, 285.37px))
+    grid-gap: 19px 27px
+    min-height: 1210px
+    &-item
+        position: relative
+        max-width: 285.37px
+        width: 100%   
+        &__img
+            width: 285.37px
+            height: 285.37px
+            display: flex
+            align-items: center
+            justify-content: center
+            text-align: center
+            &-wrapper
+                position: relative
+                display: flex
+                overflow: hidden
+                & a
+                    display: inline-flex
+        &__product
+            &-link
+                display: flex
+                flex-direction: column
+                align-items: baseline
+            &-info
+        &__discount
+            position: absolute
+            top: 42px
+            right: -160px
+            width: 442px
+            height: 42px
+            display: flex
+            align-items: center
+            justify-content: center
+            font-family: 'GothamBold'
+            font-weight: 700
+            font-size: 18px
+            line-height: 22px
+            letter-spacing: 0.05em
+            color: #000000
+            text-align: center
+            background-color: #EEC84A
+            transform: rotate(45deg)
+        &__name
+            margin-top: 13px
+            margin-bottom: 5px
+            @extend %filters-item-name
+        &__price
+            font-family: $base-font
+            font-weight: 500
+            font-size: 18px
+            line-height: 22px
+            @extend %filters-item-name
+            &-old
+                position: relative
+                display: inline-block
+                margin-bottom: 5px
+                font-size: 14px
+                line-height: 17px
+                @extend %filters-item-name
+                &::before
+                    content: ""
+                    position: absolute
+                    display: block
+                    top: 50%
+                    left: 0
+                    width: 100%
+                    height: 1px
+                    background-color: #000
+            &-new
+                display: inline-block
+                padding: 4px
+                background-color: #EEC84A
+    &__pagination
+        margin-top: 60px
+.range-slider
+    position: relative
+    height: 55px
+.irs--round .irs-line
+    height: 6px
+    background-color: #C2BCB6
+.irs--round .irs-bar
+    height: 6px
+    background-color: #692F0F
+.irs--round .irs-handle
+    top: 28px
+    width: 20px
+    height: 20px
+    border: 3.5px solid #692F0F
+.irs--round
+    & .irs-from, & .irs-to
+        background-color: #692f0f
+    & .irs-from
+        margin-left: 13px
+        &::before
+            margin-left: -15px
+    & .irs-to
+        margin-left: -16px
+        &::before
+            margin-left: 14px
+    & .irs-single
+        background-color: #692f0f
+        margin-left: -48px
+        &::before
+            margin-left: 21px
+.irs--round .irs-from::before, .irs--round .irs-to::before, .irs--round .irs-single::before
+    border-top-color: #c2bcb6
+.filters-group__thickness .irs--round
+    & .irs-from, & .irs-to
+        margin-left: 0
+        &::before
+            margin-left: -3px
+.search-result-no-product
+    padding: 20px
+    font-family: 'Gotham'
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    letter-spacing: 0.05em
+    color: #44392E
+.toggle-filters
+    position: relative
+    margin-left: 26px
+    width: 20px
+    height: 20px
+    display: none
+    align-items: center
+    cursor: pointer
+    z-index: 4 
+    & span
+        position: relative
+        display: inline-block
+        width: 100%
+        height: 2.4px
+        background-color: #44392E
+        transition: .5s
+        border-radius: 20px
+    & span::before, & span::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 2.4px
+        background-color: #44392E
+        transition: .5s
+        border-radius: 20px
+    & span::before
+        top: -6.25px
+    & span::after
+        bottom: -6.25px
+    &.active span
+        background-color: transparent
+    &.active span::before
+        top: 0px
+        transform: rotate(45deg)
+    &.active span::after
+        bottom: 0px
+        transform: rotate(-45deg)
+/*product list pagination page*/
+.pagination
+    &-wrapper
+        display: flex
+        align-items: center
+    &-header
+        display: inline-block
+        @extend %text-typography
+    &-list
+        display: inline-flex
+        align-items: center
+        &-item
+            margin-left: 8px
+            min-width: 24px
+            min-height: 24px
+            background-color: #fff
+            border: 1px solid #44392E
+            text-align: center
+            &.open-page-number
+                background-color:#44392E
+            &-link
+                display: inline-block
+                padding: 2px
+                width: 100%
+                height: 100%
+                @extend %filters-item-name
+            &-more
+                padding: 0
+                min-width: 15px
+                max-width: 19px
+                border: 0
+                background: none
+                & > .pagination-list-item-link      
+                    vertical-align: bottom
+                    line-height: 6px
+                    font-size: 18px
+.open-page-number > .pagination-list-item-link
+    color: #fff
+@media (min-width: 1920px)
+    .product-row
+        grid-template-columns: repeat(5, minmax(200px, 285.37px))
+@media (min-width: 1532px) and (max-width: 1900px)
+    .product-row
+        grid-template-columns: repeat(4, minmax(200px, 285.37px))
+@media (min-width: 1200px) and (max-width: 1532px)
+    .product-row  
+        grid-template-columns: repeat(3, minmax(200px, 285.37px))
+        &-item
+            width: 250px
+            &__img
+                width: 250px
+                height: 250px
+@media (max-width: 1200px)
+    .product
+        &-catalog
+            &__filters
+                margin-right: 20px
+        &-row
+            grid-template-columns: repeat(3, minmax(200px, 285.37px))
+            grid-gap: 20px
+            &-item
+                &__img
+                    width: 250px
+                    height: 250px
+@media (max-width: 480px)
+    %filters-item-name
+        font-size: 14px
+        line-height: 15px
+    .filters
+        &__filters-wrapper
+            position: relative
+            max-width: 355px
+            display: flex
+            align-items: first baseline
+            z-index: 1
+            &:first-child
+                margin-bottom: 16px
+                z-index: 2
+            & > .filters__filters-group
+                border: 0
+            &-secondary
+                display: flex
+                justify-content: space-between
+            & .filters-group-title
+                color: #44392E
+        &__filters
+            &-group
+                margin: 0
+                padding: 23px 10px
+                border-top: 1px solid #D8D8D8
+                &-wrapper
+                    position: fixed
+                    padding-top: 72px
+                    display: none
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: #fff
+                    overflow-y: scroll
+                    z-index: 2
+                    &.active
+                        display: block
+                    &-content
+                        margin: 0 auto
+                        padding-bottom: 138px
+                        text-align: center
+                    & .filters-group-title
+                        justify-content: space-between
+            &-item
+                &-text
+                    font-size: 16px
+                    line-height: 19px
+        &-group
+            &-item
+                font-size: 16px
+                line-height: 19px
+            &-title
+                font-size: 16px
+                line-height: 19px
+                color: #86573D
+        &-category
+            margin-right: 10px
+        &-category, &-subCategory
+            position: relative
+            padding: 0
+            width: 195px
+            overflow: inherit
+            border: 0
+        &-group
+            &__category, &__subCategory
+                position: absolute
+                top: 30px
+                right: 0
+                margin-top: 0
+                padding: 5px
+                background-color: #fff
+                box-shadow: 0px 0px 8px -2px #000
+                border: 0
+                z-index: 1
+                opacity: 0
+                visibility: hidden
+            &__subCategory
+    .filter
+        &-group
+            &__range-line
+                width: 100%
+                max-width: 350px
+            &__filter-item
+                &.open
+                    height: inherit
+                    visibility: visible
+                    opacity: 1
+        &-groups__btn-open
+            display: inline-block
+            font-size: 14px
+            line-height: 18px
+        &-item-1, &-item-2
+            color: #44392E!important 
+    .filters__filters-group-wrapper .filter-group__filter-item.open
+        display: none
+    .filters-group-item-color-container:nth-child(5n+5)
+        margin-right: 10px
+    .product
+        &-catalog
+            padding: 20px 15px
+            &-wrapper
+                justify-content: center
+                flex-direction: column
+                align-items: flex-start
+            &__filters
+                margin-right: 0
+                margin-bottom: 20px
+                width: 100%
+                &-fixed
+                    height: inherit
+                &-container
+                    position: relative
+            &__sorting-panel
+                display: none
+            &__category-name
+                display: block
+            &-title
+                display: none
+        &-row
+            grid-template-columns: repeat(2, minmax(120px, 200px))
+            grid-gap: 20px
+            padding: 16px 0
+            &-item
+                max-width: 190px
+                width: 100%
+                &__img
+                    width: 189px
+                    height: 189px
+                    object-fit: cover
+                    font-size: 12px
+                &__discount
+                    top: 33px
+                    right: -60px
+                    width: 214px
+                    height: 30px
+                    font-size: 14px
+                    line-height: 17px
+                &__name
+                    margin-top: 7px
+    .filters-subCategory > .filters-group-title
+        justify-content: flex-end
+    .range-line__max
+        transform: translate(-10%, -50%)
+    .sorting
+        &-panel
+            &-list
+                right: 0
+                width: 100%
+                &-item
+                    padding: 8px 5px
+                    font-size: 13px
+            &-select
+                max-width: 237px
+                text-align: right
+                justify-content: flex-end
+        &-icon
+            &-mob
+                width: 18px
+                height: 18px
+    .toggle-filters
+        &.active
+            display: flex
+    .range-slider
+        position: relative
+        height: 55px
+    .irs--round .irs-line
+        height: 6px
+        background-color: #C2BCB6
+    .irs--round .irs-bar
+        height: 6px
+        background-color: #692F0F
+    .irs--round .irs-handle
+        top: 28px
+        width: 20px
+        height: 20px
+        border: 3.5px solid #692F0F
+    .irs--round
+        & .irs-from, & .irs-to
+            background-color: #692f0f
+        & .irs-from
+            margin-left: 13px
+            &::before
+                margin-left: -15px
+        & .irs-to
+            margin-left: -16px
+            &::before
+                margin-left: 14px
+        & .irs-single
+            background-color: #692f0f
+            margin-left: -48px
+            &::before
+                margin-left: 21px
+    .irs--round .irs-from::before, .irs--round .irs-to::before, .irs--round .irs-single::before
+        border-top-color: #c2bcb6
+    .filters-group__thickness .irs--round
+        & .irs-from, & .irs-to
+            margin-left: 0
+            &::before
+                margin-left: -3px
+    .new-select
+        padding-right: 21px
+        width: 100%
+        font-family: $base-font
+        font-size: 16px
+        line-height: 19px
+        border: 0
+        &::after
+            width: 18px
+            height: 18px
+            top: 5px
+            right: 0
+            background: center/contain no-repeat url("../img/icons/sorting-icon.svg")
+        &__list
+            top: 32px
+            text-align: left
+    .pagination
+        &-list
+            &-item
+                &-link
+                    line-height: 19px
+@media (max-width: 396px)
+    .range-line__max
+        transform: translate(-30%, -50%)
+    .filter-group__range-line
+        max-width: 300px

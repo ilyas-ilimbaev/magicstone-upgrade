@@ -1,0 +1,59 @@
+/*шрифты*/
+@import "../fonts/fonts"
+/*переменные*/
+@import "../variables"
+/*user agreement*/
+.terms
+    padding: 37px 0 33px 0
+    &-wrapper
+    &-title
+        margin-bottom: 32px
+        &__wrapper
+            margin-bottom: 24px
+    &-subtitle
+        margin-bottom: 24px
+        font-family: $base-font
+        font-weight: 500
+        font-size: 24px
+        line-height: 29px
+        letter-spacing: 0.05em
+        color: $text-color
+    &-text
+        position: relative
+        margin-bottom: 16px
+        font-family: 'Gotham'
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        letter-spacing: 0.05em
+        color: $text-color
+        &__bold
+            font-family: $base-font
+            font-weight: 500
+        &:last-child
+            margin-bottom: 0
+    &-content
+        &__wrapper
+    &-item
+        &-list
+            &__li
+                counter-increment: num
+                list-style-position: inside
+                &:last-child 
+                    & > ol > li
+                        padding: 0
+                        &::before
+                            content: none
+                & > ol
+                    margin-top: 24px
+                & > ol > li
+                    position: relative
+                    padding-left: 33px
+                    counter-increment: num2
+                    list-style-type: none
+                    &::before
+                        content: counter(num) '.' counter(num2)
+                        position: absolute
+                        top: 0
+                        left: 0
+

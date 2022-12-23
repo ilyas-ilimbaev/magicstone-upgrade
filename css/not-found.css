@@ -1,0 +1,54 @@
+.page-404 {
+  padding: 93px 0 284px 0;
+}
+.page-404-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.page-404__logo-title {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 155px;
+  letter-spacing: 0.05em;
+  color: #EEC84A;
+}
+.page-404__logo-text {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: #44392E;
+}
+.page-404__info {
+  margin-top: 16px;
+  max-width: 455px;
+}
+.page-404__info-text {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #776F67;
+}
+.page-404__info-link {
+  color: #EEC84A;
+}
+
+@media (max-width: 480px) {
+  .page-404 {
+    padding: 120px 0;
+  }
+  .page-404__logo-title {
+    font-size: 108px;
+    line-height: 105px;
+  }
+  .page-404__logo-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

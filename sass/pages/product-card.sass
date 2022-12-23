@@ -1,0 +1,367 @@
+/*шрифты*/
+@import "../fonts/fonts"
+/*переменные*/
+@import "../variables"
+/*карточка товара*/
+.popup-added-to-cart
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    bottom: 0
+    display: none
+    align-items: center
+    justify-content: center
+    visibility: hidden
+    opacity: 0
+    transition: opacity .5s linear, visibility .5s linear
+    z-index: 99999
+    &__wrapper
+        width: 391px
+        height: 128px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background-color: #fff
+    &-title
+        margin-bottom: 16px
+        font-family: $base-font
+        font-weight: 500
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 0.05em
+        color: #44392E
+        text-align: center
+    &__btn
+        &-wrapper
+            display: flex
+            align-items: center
+            justify-content: center
+        &-link
+            padding: 14px 5px
+            font-family: 'Gotham'
+            font-weight: 400
+            font-size: 12px
+            line-height: 14px
+            text-align: center
+            letter-spacing: 0.05em
+            color: #44392E
+            cursor: pointer
+        &-border
+            margin-right: 6px
+            border: 1px solid #44392E
+        &-background
+            color: #fff
+            background-color: #44392E
+    &.active
+        display: flex
+.productPage
+    margin: 64px 0 88px 0
+.productCard
+    &-title
+        margin-bottom: 5px
+        font-family: $base-font
+        font-weight: 500
+        font-size: 24px
+        line-height: 29px
+        letter-spacing: 0.05em
+        color: $text-color
+    &-subtitle
+        margin-bottom: 16px
+        @extend %text-typography
+        color: #776F67
+        cursor: inherit
+    &-price
+        margin-top: 5px
+        font-family: 'GothamBold'
+        font-weight: 700
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 0.05em
+        color: $text-color
+    &__add-basket
+        margin-bottom: 16px
+        display: flex
+        align-items: center
+    &__product-count
+        position: relative
+        width: 80px
+        height: 50px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+    &__input-count
+        padding-left: 18px
+        width: 80px
+        height: 50px
+        @extend %text-typography
+        border: 2px solid #44392E
+    &__btn
+        &-basket
+            margin-left: 16px
+            padding: 14px 12px
+            max-width: 230px
+            width: 100%
+            text-align: center
+            @extend %text-typography
+            color: #44392E
+            background-color: #EEC84A
+            border: 0
+        &-favorites
+            padding: 14px 12px
+            display: flex
+            align-items: center
+            justify-content: center
+            max-width: 324px
+            width: 100%
+            @extend %text-typography
+            color: #44392E
+            background-color: transparent
+            border: 1px solid #44392E
+            & > .icon
+                margin-right: 8px
+                padding-top: 1px
+                width: 19px
+                height: 17px
+    &-info
+        display: grid
+        grid-template-rows: minmax(89px, auto)
+        position: relative
+        &__wrapper > .breadcrumbs
+            margin: 0
+        &__header
+            position: relative
+        &__actions
+            margin: 33px 0
+        &__spec
+            &-title
+                position: relative
+                display: flex
+                align-items: center
+                font-family: $base-font
+                @extend %text-typography
+            &-el
+                margin-bottom: 20px
+            &:last-child
+                margin: 0
+    &-link-product
+        margin-right: 32px
+        width: 285.37px
+        overflow: hidden
+        &:last-child
+            margin-right: 0px
+    &-BiG
+        display: flex
+    &-Small
+        position: relative
+        &__img
+            margin-bottom: 14px
+            width: 285.37px
+            height: 285.37px
+            object-fit: cover
+        &__info
+            &-name
+                font-family: 'Gotham'
+                font-weight: 400
+                font-size: 16px
+                line-height: 19px
+                letter-spacing: 0.05em
+                color: $text-color
+            &-price
+                margin-top: 8px
+                font-family: $base-font
+                font-weight: 500
+                font-size: 18px
+                line-height: 22px
+                letter-spacing: 0.05em
+                color: $text-color
+    &__btn
+        &-plus, &-minus
+            position: absolute
+            right: 0
+            width: 20px
+            height: 25px
+            background-color: #000
+            color: #fff
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 0
+            font-weight: bold
+        &-plus
+            top: 0
+        &-minus
+            bottom: 0
+    &__input-count[type="number"]
+        -moz-appearance: textfield
+        -webkit-appearance: textfield
+        appearance: textfield
+    &__input-count[type="number"]::-webkit-outer-spin-button, &__input-count[type="number"]::-webkit-inner-spin-button
+        display: none
+.favorites-icon
+    width: 24px
+    height: 22px
+path.animate-favorites-icon
+    fill: #fff
+.productPage-subSectionContainer
+    margin-top: 64px
+    display: flex
+    &-title
+        font-family: 'GothamBold'
+        font-weight: 700
+        font-size: 36px
+        line-height: 43px
+        letter-spacing: 0.05em
+        color: #44392E
+.product
+    &-similar
+        margin: 48px 0 60px 0
+    &-reviewed
+.spec-el
+    &-text
+        margin-top: 10px
+        &__name, &__value
+            @extend %text-typography
+        &__name
+            margin-right: 10px
+.no-products
+    &-text
+        margin: 32px 0
+        font-family: "Gotham"
+        font-weight: 400
+.product-row-item
+    &__discount
+        position: absolute
+        top: 42px
+        right: -160px
+        width: 442px
+        height: 42px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-family: 'GothamBold'
+        font-weight: 700
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 0.05em
+        color: #000000
+        text-align: center
+        background-color: #EEC84A
+        transform: rotate(45deg)
+    &__price-old
+        position: relative
+        display: inline-block
+        margin-top: 8px
+        font-family: "Gotham"
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        &::before
+            content: ""
+            position: absolute
+            display: block
+            top: 50%
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: #000
+@media (max-width: 480px)
+    .productCard
+        &-BiG
+            flex-direction: column
+        &-info
+            display: flex
+            flex-direction: column
+            &__wrapper > .breadcrumbs
+                display: none
+            &__header
+                padding-right: 50px
+            &__actions
+                margin: 10px 0
+        &__add-basket
+            flex-direction: column
+            align-items: inherit
+        &__btn
+            &-basket
+                margin-top: 16px
+                margin-left: 0
+                max-width: inherit
+            &-favorites
+                position: absolute
+                top: 0
+                right: 0   
+                padding: 0
+                height: 30px
+                width: 30px
+                display: flex
+                align-items: center
+                justify-content: center
+                max-width: 324px
+                border: 0
+                border-radius: 6px
+                font-family: "Gotham"
+                font-weight: 400
+                font-size: 18px
+                line-height: 22px
+                letter-spacing: 0.05em
+                background-color: transparent
+                cursor: pointer
+                & > .favorites-icon path
+                    fill: #44392E
+                &-text
+                    display: none
+                &.elected-active
+                    background-color:#ec5f1abf
+                    & > .favorites-icon path
+                        fill: #fff
+                & > .icon
+                    margin: 0
+        &-title
+            font-size: 18px
+            line-height: 24px
+        &-subtitle
+            font-size: 16px
+            line-height: 24px
+        &-price
+            margin-top: 6px
+        &-slider
+            margin-right: 0
+        &-link-product
+            margin-right: 10px
+            margin-bottom: 25px
+            width: 189px
+            &:nth-child(2n+2)
+                margin-right: 0
+        &-Small
+            &__img
+                margin-bottom: 7px
+                width: 189px
+                height: 189px
+            &-info-name
+                font-size: 14px
+                line-height: 17px
+            &__info-price
+                font-size: 16px
+                line-height: 19px
+    .productPage
+        margin: 24px 15px 24px 15px
+    .productPage-subSectionContainer
+        margin-top: 16px
+        margin-right: -10px
+        flex-wrap: wrap
+    .arrow-top
+        display: block
+    .favorites-icon path
+        fill: #fff
+    .popup-added-to-cart
+        &__wrapper
+            width: 320px
+@media (max-width: 412px)
+    .productCard
+        &-link-product
+            width: 130px
+        &-Small__img
+            width: 130px
+            height: 130px
